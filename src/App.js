@@ -2,14 +2,16 @@ import React from "react";
 import TodoApp from "./layouts/TodoApp";
 import store from "./redux/store";
 import {Provider} from "react-redux";
+import {Container,Box} from "@material-ui/core";
 
 export default function App() {
     return (
-        <div>
-            <h1>I am gonna create Todo-List for you</h1>
+        <Container fixed>
             <Provider store={store}>
-                <TodoApp/>
+                <Box component="span" color="text.primary" m={1}>
+                    <TodoApp/>
+                </Box>
             </Provider>
-        </div>
+        </Container>
     );
 }

@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import TodoItem from "./TodoItem";
 import {useSelector} from "react-redux";
+import {FormGroup} from "@material-ui/core";
 
 export default function TodoList(props) {
 
@@ -12,12 +13,10 @@ export default function TodoList(props) {
     }
 
     return (
-        <>
-            <ul>
-                {filtered().map(
-                    (item, key) => <TodoItem key={key} task={item}/>
-                )}
-            </ul>
-        </>
+        <FormGroup>
+            {filtered().map(
+                (item, key) => <TodoItem key={key} task={item}/>
+            )}
+        </FormGroup>
     );
 }
