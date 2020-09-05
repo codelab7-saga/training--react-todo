@@ -12,7 +12,7 @@ export default function TodoItem(props) {
     }
 
     const labeling = () => {
-        return (props.task.isComplete)?<strike>{props.task.content}</strike>:props.task.content;
+        return (props.task.isComplete) ? <strike>{props.task.content}</strike> : props.task.content;
     }
 
     return (

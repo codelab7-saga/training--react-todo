@@ -3,6 +3,7 @@ import AddTodo from "../components/AddTodo";
 import TodoList from "../components/TodoList";
 import {Grid, Paper} from "@material-ui/core";
 import {makeStyles} from '@material-ui/core/styles';
+import PostsList from "../components/posts/PostsList";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function TodoApp() {
+export default function Posts() {
 
     const classes = useStyles();
 
@@ -28,28 +29,14 @@ export default function TodoApp() {
         <div className={classes.root}>
             <Grid container spacing={2}>
                 <Grid item xs={12}>
-                    <Paper elevation={0} className={classes.paper}>
-                        <h1>I am gonna create Todo-List for you</h1>
-                    </Paper>
-                </Grid>
-                <Grid item xs={12}>
-                    <Paper elevation={2} className={classes.paper}>
-                        <AddTodo/>
-                    </Paper>
-                </Grid>
-                <Grid item xs={6}>
-                    <Paper elevation={1} className={[classes.paper, classes.paperLeft]}>
-                        <h3>Incomplete items</h3>
-                        <TodoList showChecked={false}/>
-                    </Paper>
-                </Grid>
-                <Grid item xs={6}>
                     <Paper elevation={0} className={[classes.paper, classes.paperLeft]}>
-                        <h3>Complete items</h3>
-                        <TodoList showChecked={true}/>
+                        <h3>Posts From API</h3>
+                        <PostsList/>
                     </Paper>
                 </Grid>
             </Grid>
+
+
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import {combineReducers} from "redux";
 import todos from "./todos";
-import headings from "./headings";
+import posts from "./posts";
 
 
-export default combineReducers({todos,headings});
+export default combineReducers({todos,posts});
